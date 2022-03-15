@@ -1,51 +1,57 @@
 class Movies {
-	constructor(){
-		this.moviesList = []
-		this.url = "https://api.tvmaze.com"
-	}
-	displayMovies() {
-		const mainContainer = document.querySelector('main')
-		let i= 0;
-		this.moviesList.forEach(movie => {
-			const movieContainer = document.createElement('div')
+  constructor() {
+    this.moviesList = [];
+    this.url = 'https://api.tvmaze.com';
+  }
 
-			const movieImg = document.createElement('img')
-			movieImg.alt = 'movie image'
-			movieImg.className= 'db mt1'
-			movieImg.src= movie.image.medium
-			movieContainer.appendChild(movieImg)
+  displayMovies() {
+    const mainContainer = document.querySelector('main');
+    const i = 0;
+    this.moviesList.forEach((movie) => {
+      const movieContainer = document.createElement('div');
+      movieContainer.className = 'w-20 ma2 bg-white';
 
-			const movieName= document.createElement('p')
-			movieName.innerText = movie.name 
-			movieContainer.appendChild(movieName)
+      const movieImg = document.createElement('img');
+      movieImg.alt = 'movie image';
+      movieImg.className = 'db w-100';
+      movieImg.src = movie.image.medium;
+      movieContainer.appendChild(movieImg);
 
-            const likeIcon = document.createElement('i')
-            likeIcon.className= "fa-regular fa-heart"
-            movieContainer.appendChild(likeIcon)
+      const movieName = document.createElement('p');
+      movieName.innerText = movie.name;
+      movieName.className = 'fl w-80 pt2 ml2 b f3';
+      movieContainer.appendChild(movieName);
 
-            const likeCounter= document.createElement('p')
-            likeCounter.innerText= `${i} likes`
-            movieContainer.appendChild(likeCounter)
+      const likeIcon = document.createElement('i');
+      likeIcon.className = 'fa-regular fa-heart w-10 pt2 f3 red pointer';
+      movieContainer.appendChild(likeIcon);
 
-            const commentBtn = document.createElement('button')
-            commentBtn.type = 'button'
-            commentBtn.innerText = "Comments"
-            movieContainer.appendChild(commentBtn)
+      const likeCounter = document.createElement('p');
+      likeCounter.className = 'db w-100 fl tr pt2 pr2 b f4';
+      likeCounter.innerText = `${i} likes`;
+      movieContainer.appendChild(likeCounter);
 
-            const reservationBtn = document.createElement('button')
-            reservationBtn.type="button"
-            reservationBtn.innerText= "Reservations"
-            movieContainer.appendChild(reservationBtn)
+      const commentBtn = document.createElement('button');
+      commentBtn.type = 'button';
+      commentBtn.className = 'db center mt3 mb2 b mw-100';
+      commentBtn.innerText = 'Comments';
+      movieContainer.appendChild(commentBtn);
 
-            mainContainer.appendChild(movieContainer)
-		})
+      const reservationBtn = document.createElement('button');
+      reservationBtn.type = 'button';
+      reservationBtn.className = 'db center mt3 mb2 b mw-100';
+      reservationBtn.innerText = 'Reservations';
+      movieContainer.appendChild(reservationBtn);
 
-	}
-	storeMovies (listOfMovies) {
-		this.moviesList = listOfMovies
-		this.displayMovies()
-	}
+      mainContainer.appendChild(movieContainer);
+    });
+  }
+
+  storeMovies(listOfMovies) {
+    this.moviesList = listOfMovies;
+    this.displayMovies();
+  }
 }
-const movies = new Movies
+const movies = new Movies();
 
-export default movies 
+export default movies;
