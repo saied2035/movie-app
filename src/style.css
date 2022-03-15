@@ -38,4 +38,11 @@ body {
   list-style: none;
   margin-right: 1rem;
   color: #fff;
+  font-size: 16px;
+}
+
+.foot h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
 }
