@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import 'tachyons';
 import './style.css';
 import activateItemListStyle from './modules/functions/functions.js';

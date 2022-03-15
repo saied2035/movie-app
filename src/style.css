@@ -17,6 +17,7 @@ body {
 
 header {
   background-color: #fff;
+  z-index: -100;
 }
 
 #nav-list {
@@ -34,8 +35,8 @@ header {
 .foot {
   border-top: 1px solid black;
   width: 100%;
-  position: absolute;
-  top: 90.5vh;
+  position: relative;
+  bottom: 0;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -60,4 +61,84 @@ header {
   font-size: 22px;
   font-weight: 800;
   color: #fff;
+}
+
+.comments-pop {
+  border-color: var(--secondary-color);
+  width: 70%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 2rem;
+}
+
+.img-div {
+  width: 65%;
+  margin: 2rem auto;
+  display: flex;
+}
+
+.img-div img {
+  width: 70%;
+  margin: 2rem auto 0 auto;
+  position: relative;
+}
+
+.fa-times {
+  font-size: 30px;
+  position: absolute;
+  left: 82.5%;
+  margin-top: 5px;
+}
+
+.comments-pop h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.specs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 25%);
+  grid-template-rows: repeat(2, 25px);
+  text-align: end;
+  margin-left: 20%;
+  margin-bottom: 1rem;
+}
+
+.show-comments {
+  text-align: center;
+  position: relative;
+}
+
+.show-comments ul {
+  list-style: none;
+}
+
+.add-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.add-comments form {
+  margin: 1rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin-bottom: 1rem;
+  padding: 10px 2rem;
+}
+
+form textarea {
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+form button {
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
 }
