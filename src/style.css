@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  max-width: 100%;
 }
 
 :root {
@@ -35,7 +36,6 @@ header {
   border-top: 1px solid black;
   width: 100%;
   position: absolute;
-  top: 90.5vh;
   padding: 1rem;
   display: flex;
   align-items: center;
