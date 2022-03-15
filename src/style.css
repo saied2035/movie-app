@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap');
+
 * {
   box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Cormorant Upright', serif;
 }
 
 .foot {
@@ -12,6 +25,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--secondary-color);
+  overflow: hidden;
 }
 
 .footext {
@@ -22,4 +37,5 @@
 .foot .footext li {
   list-style: none;
   margin-right: 1rem;
+  color: #fff;
 }
