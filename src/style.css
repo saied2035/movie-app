@@ -1,0 +1,8 @@
+#nav-list {
+	list-style: none;
+	gap: 6rem;
+}
+.bold-underline {
+	font-weight: bold;
+	text-decoration: underline;
+}
