@@ -8,3 +8,4 @@ const whatToDisplay = (event) => {
 
 const navbarItemArr = Array.from(document.querySelectorAll('.nav-item'));
 navbarItemArr.forEach((item) => item.addEventListener('click', whatToDisplay));
+
