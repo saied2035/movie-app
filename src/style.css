@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.foot {
+  border-top: 1px solid black;
+  width: 100vw;
+  height: 70px;
+  position: absolute;
+  top: 90vh;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footext {
+  display: flex;
+  justify-content: end;
+}
+
+.foot .footext li {
+  list-style: none;
+  margin-right: 1rem;
+}
