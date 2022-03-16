@@ -1,6 +1,11 @@
 import { loadLikes } from '../functions/functions.js';
 
 export const getMovies = async (movies) => {
+  if (localStorage.movies) {
+    const moviesList = JSON.parse(localStorage.movies);
+    movies.storeMovies(moviesList);
+    return;
+  }
   const moviesList = await fetch(`${movies.url}/shows`)
     .then((res) => res.json());
   movies.storeMovies(moviesList);
