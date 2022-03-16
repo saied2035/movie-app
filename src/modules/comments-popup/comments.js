@@ -78,8 +78,8 @@ export const savePop = (commentItem) => {
   <div class="add-comments">
     <h4>Add a Comment</h4>
     <form id="comment-form">
-      <input id="username" type="text" placeholder="Your Name">
-      <textarea name="" id="message" cols="50" rows="3" placeholder="Your insights"></textarea>
+      <input id="username" type="text" placeholder="Your Name" required>
+      <textarea name="" id="message" cols="50" rows="3" placeholder="Your insights"></textarea required>
       <button type="submit">Comment</button>
     </form>
   </div>

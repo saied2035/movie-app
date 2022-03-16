@@ -76,7 +76,8 @@ header {
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: aliceblue;
+  background: transparent;
+  backdrop-filter: blur(5px);
   display: none;
   overflow: scroll;
 }
@@ -131,8 +132,8 @@ header {
   grid-template-rows: repeat(2, 45px);
   text-align: start;
   font-size: 24px;
-  line-height: 9px;
-  word-break: break-all;
+  line-height: 12px;
+  word-break: normal;
   margin: 1rem 25% 0 25%;
 }
 
