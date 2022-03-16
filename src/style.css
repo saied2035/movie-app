@@ -79,10 +79,11 @@ svg {
 .comments-pop {
   border-color: var(--secondary-color);
   width: 70%;
-  margin: auto;
+  margin: 3rem auto;
   background-color: #fff;
   border-radius: 2rem;
-  display: none;
+  z-index: 1;
+  position: relative;
 }
 
 .img-div {
@@ -94,13 +95,13 @@ svg {
 .img-div img {
   width: 70%;
   margin: 2rem auto 0 auto;
-  position: relative;
 }
 
 .fa-times {
   font-size: 30px;
   position: absolute;
-  left: 82.5%;
+  right: 1rem;
+  top: 1rem;
   margin-top: 5px;
 }
 
@@ -112,10 +113,10 @@ svg {
 .specs {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 25%);
-  grid-template-rows: repeat(2, 25px);
+  grid-template-columns: repeat(2, 30%);
+  grid-template-rows: repeat(2, 50px);
   text-align: end;
-  margin-left: 20%;
+  margin-left: 17.5%;
   margin-bottom: 1rem;
 }
 
@@ -155,4 +156,20 @@ form button {
   width: 150px;
   height: 40px;
   margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
 }
