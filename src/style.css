@@ -21,14 +21,12 @@ header {
   z-index: -100;
 }
 
-i,
 svg {
   pointer-events: none;
 }
 
 #nav-list {
   list-style: none;
-  gap: 6rem;
   font-size: 18px;
   color: black;
 }
@@ -69,18 +67,36 @@ svg {
   color: #fff;
 }
 
+.pop-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: aliceblue;
+  display: none;
+  overflow: scroll;
+}
+
 .comments-pop {
   border-color: var(--secondary-color);
   width: 70%;
-  margin: 3rem auto;
+  margin: auto;
   background-color: #fff;
   border-radius: 2rem;
   z-index: 1;
   position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: visible;
 }
 
 .img-div {
-  width: 65%;
+  width: 55%;
+  height: 200px;
   margin: 2rem auto;
   display: flex;
 }
@@ -101,16 +117,25 @@ svg {
 .comments-pop h2 {
   text-align: center;
   margin-bottom: 1rem;
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
 }
 
 .specs {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 30%);
-  grid-template-rows: repeat(2, 50px);
-  text-align: end;
-  margin-left: 17.5%;
-  margin-bottom: 1rem;
+  grid-template-columns: repeat(2, 15vw);
+  grid-template-rows: repeat(2, 45px);
+  text-align: start;
+  font-size: 24px;
+  line-height: 9px;
+  word-break: break-all;
+  margin: 1rem 25% 0 25%;
+}
+
+.specs span {
+  font-size: 16px;
 }
 
 .show-comments {

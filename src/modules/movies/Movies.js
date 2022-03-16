@@ -1,18 +1,21 @@
 // eslint-disable-next-line no-unused-vars
 import { showComments } from '../comments-popup/comments.js';
+import { saveLike } from '../events/events.js';
 
 class Movies {
   constructor() {
     this.moviesList = [];
     this.url = 'https://api.tvmaze.com';
+    this.appId = '6IS1WqwHJvP8CAVA1Fp2';
+    this.involvmentAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${this.appId}`;
   }
 
   displayMovies() {
     const mainContainer = document.querySelector('main');
-    const i = 0;
     this.moviesList.forEach((movie) => {
       const movieContainer = document.createElement('div');
-      movieContainer.className = 'w-20 ma2 bg-white';
+      movieContainer.className = 'movie-item w-50 w-40-m w-20-ns ma2 bg-white';
+      movieContainer.id = `movie${movie.id}`;
 
       const movieImg = document.createElement('img');
       movieImg.alt = 'movie image';
@@ -25,13 +28,22 @@ class Movies {
       movieName.className = 'fl w-80 pt2 ml2 b f3';
       movieContainer.appendChild(movieName);
 
+      const likeIconContainer = document.createElement('span');
+      likeIconContainer.className = 'like-container pointer';
       const likeIcon = document.createElement('i');
       likeIcon.className = 'fa-regular fa-heart w-10 pt2 f3 red pointer';
-      movieContainer.appendChild(likeIcon);
+      likeIconContainer.appendChild(likeIcon);
+      likeIconContainer.addEventListener('click', (event) => saveLike(event, this.involvmentAPI));
+      movieContainer.appendChild(likeIconContainer);
+
+      const hiddenId = document.createElement('span');
+      hiddenId.className = 'dn';
+      hiddenId.innerText = movie.id;
+      movieContainer.appendChild(hiddenId);
 
       const likeCounter = document.createElement('p');
-      likeCounter.className = 'db w-100 fl tr pt2 pr2 b f4';
-      likeCounter.innerText = `${i} likes`;
+      likeCounter.className = 'like-counter db w-100 fl tr pt2 pr2 b f4';
+      likeCounter.innerText = '0 likes';
       movieContainer.appendChild(likeCounter);
 
       const commentBtn = document.createElement('button');
@@ -46,13 +58,14 @@ class Movies {
       reservationBtn.className = 'db center mt3 mb2 b mw-100';
       reservationBtn.innerText = 'Reservations';
       movieContainer.appendChild(reservationBtn);
-
       mainContainer.appendChild(movieContainer);
     });
   }
 
   storeMovies(listOfMovies) {
     this.moviesList = listOfMovies;
+    if (!localStorage.movies) localStorage.setItem('movies', JSON.stringify(this.moviesList));
+
     this.displayMovies();
   }
 }
