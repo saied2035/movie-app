@@ -19,13 +19,6 @@ body {
 header {
   background-color: #fff;
   z-index: -100;
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-}
-
-header nav {
-  max-width: 100vw;
 }
 
 i,

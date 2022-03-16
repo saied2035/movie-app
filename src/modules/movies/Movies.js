@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { showComments, showPop } from '../comments-popup/comments.js';
+import { showComments } from '../comments-popup/comments.js';
 
 class Movies {
   constructor() {
