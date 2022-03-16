@@ -21,8 +21,10 @@ header {
   z-index: -100;
 }
 
-svg {
+.movie-item path {
   pointer-events: none;
+  stroke: red;
+  stroke-width: 40;
 }
 
 #nav-list {
@@ -106,7 +108,7 @@ svg {
   margin: 2rem auto 0 auto;
 }
 
-.fa-times {
+.fa-xmark {
   font-size: 30px;
   position: absolute;
   right: 1rem;

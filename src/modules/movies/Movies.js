@@ -21,6 +21,7 @@ class Movies {
       movieImg.alt = 'movie image';
       movieImg.className = 'db w-100';
       movieImg.src = movie.image.medium;
+      movieImg.loading = 'lazy';
       movieContainer.appendChild(movieImg);
 
       const movieName = document.createElement('p');
@@ -29,9 +30,9 @@ class Movies {
       movieContainer.appendChild(movieName);
 
       const likeIconContainer = document.createElement('span');
-      likeIconContainer.className = 'like-container pointer';
+      likeIconContainer.className = 'pointer';
       const likeIcon = document.createElement('i');
-      likeIcon.className = 'fa-regular fa-heart w-10 pt2 f3 red pointer';
+      likeIcon.className = 'fa-solid fa-heart w-10 pt2 f3 white pointer';
       likeIconContainer.appendChild(likeIcon);
       likeIconContainer.addEventListener('click', (event) => saveLike(event, this.involvmentAPI));
       movieContainer.appendChild(likeIconContainer);
