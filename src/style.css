@@ -19,11 +19,13 @@ body {
 header {
   background-color: #fff;
 }
+
 path {
   pointer-events: none;
   stroke: red;
   stroke-width: 40;
 }
+
 #nav-list {
   list-style: none;
   font-size: 18px;

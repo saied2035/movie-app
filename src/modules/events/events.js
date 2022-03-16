@@ -1,4 +1,4 @@
-import {loadLikes} from '../functions/functions.js'
+import { loadLikes } from '../functions/functions.js';
 
 export const getMovies = async (movies) => {
   const moviesList = await fetch(`${movies.url}/shows`)
@@ -6,23 +6,23 @@ export const getMovies = async (movies) => {
   movies.storeMovies(moviesList);
 };
 
-export const saveLike = (e,api) => {
-   const likeIcon = e.target
+export const saveLike = (e, api) => {
+  const likeIcon = e.target;
 
-   const likeIconPath = likeIcon.querySelector('path')
-   likeIconPath.classList.add('red')
-   setTimeout(() => likeIconPath.classList.remove('red'),150)
+  const likeIconPath = likeIcon.querySelector('path');
+  likeIconPath.classList.add('red');
+  setTimeout(() => likeIconPath.classList.remove('red'), 150);
 
-   const likeIconContainer= likeIcon.closest('span')
-   const idContainer = likeIconContainer.nextElementSibling
-   const id = idContainer.innerText
-   
-   fetch(`${api}/likes`, {
-    method:'POST',
-    body : JSON.stringify({item_id:`${id}`}),
+  const likeIconContainer = likeIcon.closest('span');
+  const idContainer = likeIconContainer.nextElementSibling;
+  const id = idContainer.innerText;
+
+  fetch(`${api}/likes`, {
+    method: 'POST',
+    body: JSON.stringify({ item_id: `${id}` }),
     headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-   })
-   .then(res => loadLikes(api))
-}
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(() => loadLikes(api));
+};

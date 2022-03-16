@@ -7,16 +7,15 @@ export const activateItemListStyle = (target) => {
 };
 
 const displayLikes = (moviesLikes) => {
-     moviesLikes.forEach(movieLikes => {
-       const movie = document.querySelector(`#movie${movieLikes.item_id}`)
-       const likesContainer = movie.querySelector('.like-counter')
-       likesContainer.innerText = `${movieLikes.likes} likes`
-     })
-}
+  moviesLikes.forEach((movieLikes) => {
+    const movie = document.querySelector(`#movie${movieLikes.item_id}`);
+    const likesContainer = movie.querySelector('.like-counter');
+    likesContainer.innerText = `${movieLikes.likes} likes`;
+  });
+};
 
 export const loadLikes = async (api) => {
-      const likes = await fetch(`${api}/likes`).then(res => res.json())
-      .then(result => result)
-        displayLikes(likes)
-}
-
+  const likes = await fetch(`${api}/likes`).then((res) => res.json())
+    .then((result) => result);
+  displayLikes(likes);
+};
