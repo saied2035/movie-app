@@ -1,10 +1,11 @@
-import {saveLike} from '../events/events.js'
+import { saveLike } from '../events/events.js';
+
 class Movies {
   constructor() {
     this.moviesList = [];
     this.url = 'https://api.tvmaze.com';
-    this.appId= "6IS1WqwHJvP8CAVA1Fp2"
-    this.involvmentAPI= `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${this.appId}`
+    this.appId = '6IS1WqwHJvP8CAVA1Fp2';
+    this.involvmentAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${this.appId}`;
   }
 
   displayMovies() {
@@ -12,7 +13,7 @@ class Movies {
     this.moviesList.forEach((movie) => {
       const movieContainer = document.createElement('div');
       movieContainer.className = 'w-50 w-40-m w-20-ns ma2 bg-white';
-      movieContainer.id= `movie${movie.id}`
+      movieContainer.id = `movie${movie.id}`;
 
       const movieImg = document.createElement('img');
       movieImg.alt = 'movie image';
@@ -25,24 +26,24 @@ class Movies {
       movieName.className = 'fl w-80 pt2 ml2 b f3';
       movieContainer.appendChild(movieName);
 
-      const likeIconContainer = document.createElement('span')
-      likeIconContainer.className= "like-container pointer"
+      const likeIconContainer = document.createElement('span');
+      likeIconContainer.className = 'like-container pointer';
       const likeIcon = document.createElement('i');
       likeIcon.className = 'fa-regular fa-heart w-10 pt2 f3 red pointer';
-      likeIconContainer.appendChild(likeIcon)
-      likeIconContainer.addEventListener('click',(event) => saveLike(event,this.involvmentAPI))
+      likeIconContainer.appendChild(likeIcon);
+      likeIconContainer.addEventListener('click', (event) => saveLike(event, this.involvmentAPI));
       movieContainer.appendChild(likeIconContainer);
-      
-      const hiddenId = document.createElement('span')
-      hiddenId.className= "dn"
-      hiddenId.innerText= movie.id
+
+      const hiddenId = document.createElement('span');
+      hiddenId.className = 'dn';
+      hiddenId.innerText = movie.id;
       movieContainer.appendChild(hiddenId);
 
       const likeCounter = document.createElement('p');
       likeCounter.className = 'like-counter db w-100 fl tr pt2 pr2 b f4';
       likeCounter.innerText = '0 likes';
       movieContainer.appendChild(likeCounter);
-      
+
       const commentBtn = document.createElement('button');
       commentBtn.type = 'button';
       commentBtn.className = 'db center mt3 mb2 b mw-100';
@@ -60,8 +61,8 @@ class Movies {
 
   storeMovies(listOfMovies) {
     this.moviesList = listOfMovies;
-    if(!localStorage.movies) localStorage.setItem('movies',JSON.stringify(this.moviesList))
-      
+    if (!localStorage.movies) localStorage.setItem('movies', JSON.stringify(this.moviesList));
+
     this.displayMovies();
   }
 }

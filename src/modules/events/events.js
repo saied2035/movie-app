@@ -1,4 +1,4 @@
-import {loadLikes} from '../functions/functions.js'
+import { loadLikes } from '../functions/functions.js';
 
 export const getMovies = async (movies) => {
   const moviesList = await fetch(`${movies.url}/shows`)
@@ -6,18 +6,18 @@ export const getMovies = async (movies) => {
   movies.storeMovies(moviesList);
 };
 
-export const saveLike = (e,api) => {
-   const idContainer = e.target.nextElementSibling
-   const id = idContainer.innerText
-   fetch(`${api}/likes`, {
-    method:'POST',
-    body : JSON.stringify({item_id:`${id}`}),
+export const saveLike = (e, api) => {
+  const idContainer = e.target.nextElementSibling;
+  const id = idContainer.innerText;
+  fetch(`${api}/likes`, {
+    method: 'POST',
+    body: JSON.stringify({ item_id: `${id}` }),
     headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-   })
-   .then(res => {
-    console.log('save',res)
-    loadLikes(api)
+      'Content-type': 'application/json; charset=UTF-8',
+    },
   })
-}
+    .then((res) => {
+      console.log('save', res);
+      loadLikes(api);
+    });
+};

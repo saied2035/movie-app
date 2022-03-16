@@ -20,7 +20,8 @@ header {
   background-color: #fff;
 }
 
-i,svg {
+i,
+svg {
   pointer-events: none;
 }
 
