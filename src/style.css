@@ -20,9 +20,12 @@ header {
   background-color: #fff;
 }
 
+i,svg {
+  pointer-events: none;
+}
+
 #nav-list {
   list-style: none;
-  gap: 6rem;
   font-size: 18px;
   color: black;
 }
