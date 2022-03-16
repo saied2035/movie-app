@@ -21,6 +21,11 @@ header {
   z-index: -100;
 }
 
+i,
+svg {
+  pointer-events: none;
+}
+
 #nav-list {
   list-style: none;
   gap: 6rem;
