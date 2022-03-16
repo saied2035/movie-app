@@ -12,13 +12,14 @@ class Movies {
     const mainContainer = document.querySelector('main');
     this.moviesList.forEach((movie) => {
       const movieContainer = document.createElement('div');
-      movieContainer.className = 'w-50 w-40-m w-20-ns ma2 bg-white';
+      movieContainer.className = 'movie-item w-50 w-40-m w-20-ns ma2 bg-white';
       movieContainer.id = `movie${movie.id}`;
 
       const movieImg = document.createElement('img');
       movieImg.alt = 'movie image';
       movieImg.className = 'db w-100';
       movieImg.src = movie.image.medium;
+      movieImg.loading = 'lazy';
       movieContainer.appendChild(movieImg);
 
       const movieName = document.createElement('p');

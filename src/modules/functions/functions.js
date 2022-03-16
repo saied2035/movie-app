@@ -19,3 +19,11 @@ export const loadLikes = async (api) => {
     .then((result) => result);
   displayLikes(likes);
 };
+
+export const itemCounter = () => {
+  const movies = document.querySelectorAll('.movie-item');
+  const numberOfMovies = movies.length;
+  const HomeNavItem = document.querySelector('.nav-item');
+  HomeNavItem.innerText = `(${numberOfMovies}) ${HomeNavItem.innerText}`;
+  return numberOfMovies;
+};
