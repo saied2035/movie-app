@@ -19,11 +19,11 @@ body {
 header {
   background-color: #fff;
 }
-
-i,svg {
+path {
   pointer-events: none;
+  stroke: red;
+  stroke-width: 40;
 }
-
 #nav-list {
   list-style: none;
   font-size: 18px;

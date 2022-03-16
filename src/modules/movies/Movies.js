@@ -26,9 +26,9 @@ class Movies {
       movieContainer.appendChild(movieName);
 
       const likeIconContainer = document.createElement('span')
-      likeIconContainer.className= "like-container pointer"
+      likeIconContainer.className= "pointer"
       const likeIcon = document.createElement('i');
-      likeIcon.className = 'fa-regular fa-heart w-10 pt2 f3 red pointer';
+      likeIcon.className = 'fa-solid fa-heart w-10 pt2 f3 white pointer';
       likeIconContainer.appendChild(likeIcon)
       likeIconContainer.addEventListener('click',(event) => saveLike(event,this.involvmentAPI))
       movieContainer.appendChild(likeIconContainer);
@@ -61,7 +61,7 @@ class Movies {
   storeMovies(listOfMovies) {
     this.moviesList = listOfMovies;
     if(!localStorage.movies) localStorage.setItem('movies',JSON.stringify(this.moviesList))
-      
+
     this.displayMovies();
   }
 }
