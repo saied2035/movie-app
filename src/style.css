@@ -148,6 +148,12 @@ header {
 
 .show-comments ul {
   list-style: none;
+  border: 2px solid silver;
+  border-radius: 10px;
+  width: 80%;
+  margin: 1rem auto;
+  max-height: 30vh;
+  overflow: auto;
 }
 
 .add-comments {
