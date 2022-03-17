@@ -12,25 +12,25 @@ class Movies {
     const mainContainer = document.querySelector('main');
     this.moviesList.forEach((movie) => {
       const movieContainer = document.createElement('div');
-      movieContainer.className = 'movie-item w-50 w-40-m w-20-ns ma2 bg-white';
+      movieContainer.className = 'movie-item w-50 w-40-m w-20-ns ma4 mt0 bg-white';
       movieContainer.id = `movie${movie.id}`;
 
       const movieImg = document.createElement('img');
       movieImg.alt = 'movie image';
-      movieImg.className = 'db w-100';
+      movieImg.className = 'db w-100 h5';
       movieImg.src = movie.image.medium;
       movieImg.loading = 'lazy';
       movieContainer.appendChild(movieImg);
 
       const movieName = document.createElement('p');
       movieName.innerText = movie.name;
-      movieName.className = 'fl w-80 pt2 ml2 b f3';
+      movieName.className = 'pt2 pl1 b f4';
       movieContainer.appendChild(movieName);
 
       const likeIconContainer = document.createElement('span');
-      likeIconContainer.className = 'pointer';
+      likeIconContainer.className = 'fr w-100 pointer';
       const likeIcon = document.createElement('i');
-      likeIcon.className = 'fa-solid fa-heart w-10 pt2 f3 white pointer';
+      likeIcon.className = 'fa-solid fr fa-heart pt2 pr2 f3 white pointer';
       likeIconContainer.appendChild(likeIcon);
       likeIconContainer.addEventListener('click', (event) => saveLike(event, this.involvmentAPI));
       movieContainer.appendChild(likeIconContainer);

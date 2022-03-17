@@ -14,12 +14,19 @@
 body {
   background-color: var(--primary-color);
   font-family: 'Cormorant Upright', serif;
+  overflow-x: hidden;
 }
 
 header {
   background-color: #fff;
 }
+main {
+  height: 75vh;
+  overflow: hidden;
 
+}
+.movie-item {
+}
 path {
   pointer-events: none;
   stroke: red;
@@ -41,6 +48,7 @@ path {
   border-top: 1px solid black;
   width: 100%;
   position: absolute;
+  bottom: 0;
   padding: 1rem;
   display: flex;
   align-items: center;
