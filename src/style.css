@@ -79,13 +79,12 @@ header {
   background: transparent;
   backdrop-filter: blur(5px);
   display: none;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .comments-pop {
-  border-color: var(--secondary-color);
   width: 70%;
-  margin: auto;
+  margin: 3rem auto;
   background-color: #fff;
   border-radius: 2rem;
   z-index: 1;
@@ -94,7 +93,8 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
-  overflow-y: visible;
+  height: 80%;
+  overflow-y: auto;
 }
 
 .img-div {
@@ -193,4 +193,8 @@ form button {
 
 .red {
   color: red;
+}
+
+.scroll {
+  overflow: hidden;
 }

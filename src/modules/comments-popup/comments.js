@@ -57,7 +57,9 @@ const saveComments = async () => {
 const closeComments = () => {
   commentsArea.classList.add('hide');
   popOverlay.style.display = 'none';
+  document.querySelector('body').classList.remove('scroll');
 };
+
 const movies = JSON.parse(localStorage.movies);
 export const savePop = (commentItem) => {
   const shows = Array.from(document.querySelectorAll('.movie-item'));
@@ -108,5 +110,6 @@ export function showComments(e) {
   savePop(e.target);
   commentsArea.classList.remove('hide');
   popOverlay.style.display = 'block';
+  document.querySelector('body').classList.add('scroll');
   loadComments(api);
 }
