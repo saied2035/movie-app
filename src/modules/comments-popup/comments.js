@@ -12,6 +12,13 @@ const getColor = (vote) => {
 };
 
 const displayComments = (movieComments) => {
+  const comments = document.querySelector('.new-comments');
+  comments.remove();
+  const commentContainer = document.querySelector('.show-comments');
+  const commentSection = document.createElement('ul');
+  commentSection.classList.add('new-comments');
+  commentContainer.appendChild(commentSection);
+
   movieComments.forEach((movieComment) => {
     const commentSection = document.querySelector('.new-comments');
     const commentLi = document.createElement('li');
@@ -31,19 +38,22 @@ const loadComments = async (api) => {
 };
 
 const saveComments = async () => {
-  const username = document.getElementById('username').value;
-  const message = document.getElementById('message').value;
+  const username = document.getElementById('username');
+  const message = document.getElementById('message');
   const id = document.getElementById('item-id').value;
 
   await fetch(`${api}/comments`, {
     method: 'POST',
-    body: JSON.stringify({ item_id: `${id}`, username: `${username}`, comment: `${message}` }),
+    body: JSON.stringify({ item_id: `${id}`, username: `${username.value}`, comment: `${message.value}` }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
     .then(() => loadComments(api));
+  username.value = null;
+  message.value = null;
 };
+
 const closeComments = () => {
   commentsArea.classList.add('hide');
   popOverlay.style.display = 'none';
@@ -79,7 +89,7 @@ export const savePop = (commentItem) => {
     <h4>Add a Comment</h4>
     <form id="comment-form">
       <input id="username" type="text" placeholder="Your Name" required>
-      <textarea name="" id="message" cols="50" rows="3" placeholder="Your insights"></textarea required>
+      <textarea name="" id="message" cols="50" rows="3" placeholder="Your insights" required></textarea>
       <button type="submit">Comment</button>
     </form>
   </div>
