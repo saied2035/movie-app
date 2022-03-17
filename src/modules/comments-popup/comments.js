@@ -98,4 +98,5 @@ export function showComments(e) {
   savePop(e.target);
   commentsArea.classList.remove('hide');
   popOverlay.style.display = 'block';
+  loadComments(api);
 }
