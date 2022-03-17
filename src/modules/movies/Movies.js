@@ -7,6 +7,7 @@ class Movies {
     this.url = 'https://api.tvmaze.com';
     this.appId = '6IS1WqwHJvP8CAVA1Fp2';
     this.involvmentAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${this.appId}`;
+    this.i = 0;
   }
 
   displayMovies() {
@@ -55,6 +56,8 @@ class Movies {
       const reservationBtn = document.createElement('button');
       reservationBtn.type = 'button';
       reservationBtn.className = 'db center mt3 mb2 b mw-100';
+      reservationBtn.id = this.i;
+      this.i += 1;
       reservationBtn.innerText = 'Reservations';
       reservationBtn.addEventListener('click', reservationsPopUp);
       movieContainer.appendChild(reservationBtn);
