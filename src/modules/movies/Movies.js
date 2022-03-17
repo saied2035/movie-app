@@ -1,4 +1,5 @@
 import { saveLike } from '../events/events.js';
+import {reservationsPopUp} from '../functions/reservationFunct.js'
 
 class Movies {
   constructor() {
@@ -55,6 +56,7 @@ class Movies {
       reservationBtn.type = 'button';
       reservationBtn.className = 'db center mt3 mb2 b mw-100';
       reservationBtn.innerText = 'Reservations';
+      reservationBtn.addEventListener('click', reservationsPopUp);
       movieContainer.appendChild(reservationBtn);
       mainContainer.appendChild(movieContainer);
     });
