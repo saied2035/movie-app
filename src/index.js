@@ -2,12 +2,12 @@
 import 'tachyons';
 import './style.css';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { activateItemListStyle, loadLikes, itemCounter } from './modules/functions/functions.js';
 import { getMovies } from './modules/events/events.js';
 import movies from './modules/movies/Movies.js';
 
-library.add(faHeart);
+library.add(faHeart, faTimes);
 
 const whatToDisplay = (event) => {
   activateItemListStyle(event.target);
