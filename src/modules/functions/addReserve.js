@@ -3,6 +3,7 @@ import { postReserve, getReserve } from '../events/reserve_api.js';
 export const reserveCount = (items) => {
   const reserveCountDisplay = document.querySelector('#reserveCount');
   reserveCountDisplay.innerText = `(${items.length})`;
+  return items.length;
 };
 
 const addReserve = () => {
