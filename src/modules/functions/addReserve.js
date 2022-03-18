@@ -1,33 +1,27 @@
-import { postReserve, getReserve } from "../events/reserve_api.js";
+import { postReserve, getReserve } from '../events/reserve_api.js';
 
 export const reserveCount = (items) => {
   const reserveCountDisplay = document.querySelector('#reserveCount');
   reserveCountDisplay.innerText = `(${items.length})`;
-}
+};
 
-const addReserve = (event) => {
+const addReserve = () => {
   const name = document.querySelector('#name');
-  const start_date = document.querySelector('#start_date');
-  const end_date = document.querySelector('#end_date');
+  const startDate = document.querySelector('#start_date');
+  const endDate = document.querySelector('#end_date');
   const form = document.querySelector('#reserveForm');
-  // const movie = event.target.closest('.movie-item');
-  // const idContainer = movie.querySelector('.hidden-id');
-  // const id = idContainer.innerText;
-
-  // console.log(id);
-  // const non_specific_id = document.querySelector('#movieSpace > ');
-  const specific_id = document.querySelector('#movieSpace > .hidden_id').innerText;
-  console.log(specific_id);
+  const specificId = document.querySelector('#movieSpace > .hidden_id').innerText;
   const raw = JSON.stringify({
-    item_id: specific_id,
+    item_id: specificId,
     username: name.value,
-    date_start: start_date.value,
-    date_end: end_date.value
+    date_start: startDate.value,
+    date_end: endDate.value,
   });
 
   form.reset();
-  postReserve(raw, specific_id);
-  getReserve(specific_id);
+  postReserve(raw, specificId).then(() => {
+    getReserve(specificId).then((loadReserves) => reserveCount(loadReserves));
+  });
 };
 
 export default addReserve;

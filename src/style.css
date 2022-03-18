@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap");
 
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@
 
 body {
   background-color: var(--primary-color);
-  font-family: 'Cormorant Upright', serif;
+  font-family: "Cormorant Upright", serif;
 }
 
 header {
@@ -49,7 +49,7 @@ header {
   z-index: 1;
   visibility: hidden;
   background-color: white;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .no-scroll {
@@ -72,12 +72,6 @@ header {
   margin: 10px 2px;
 }
 
-#reservePopUpSpace > h3 {
-  width: fit-content;
-  /* transform: translateX(40%); */
-  margin: 20px 180px;
-}
-
 .close-reserve {
   float: right;
 }
@@ -88,7 +82,11 @@ header {
   user-select: none;
 }
 
-#reserveForm{
+li {
+  list-style-type: none;
+}
+
+#reserveForm {
   display: flex;
   flex-direction: column;
 }

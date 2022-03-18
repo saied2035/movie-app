@@ -24,17 +24,17 @@
       </div>
     </main>
     <div id="reservePopUpSpace">
-      <span class="close-reserve">&#x2715</span>
+      <span class="close-reserve pointer">&#x2715</span>
       <div id="movieSpace">
         
       </div>
-      <h3>Reservations<span id="reserveCount"></span></h3>
-      <div id="loadReserveSpace"></div>
+      <h3 class="tc center">Reservations<span id="reserveCount"></span></h3>
+      <div id="loadReserveSpace" class="tc center"></div>
       <form id="reserveForm">
-        <h3>Add a Reservation</h3>
-        <input type="text" placeholder="name" id="name" />
-        <input type="date" placeholder="Start date" id="start_date"/>
-        <input type="date" placeholder="End date" id="end_date"/>
+        <h3 class="tc center">Add a Reservation</h3>
+        <input type="text" placeholder="name" id="name" required/>
+        <input type="date" placeholder="Start date" id="start_date" required/>
+        <input type="date" placeholder="End date" id="end_date" required/>
         <button type="submit">Add Reservations</button>
       </form>
     </div>

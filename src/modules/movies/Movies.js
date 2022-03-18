@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { showComments } from '../comments-popup/comments.js';
 import { saveLike } from '../events/events.js';
-import {reservationsPopUp} from '../functions/reservationFunct.js'
+import { reservationsPopUp } from '../functions/reservationFunct.js';
 
 class Movies {
   constructor() {
