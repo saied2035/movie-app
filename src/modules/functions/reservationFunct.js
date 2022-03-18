@@ -32,6 +32,8 @@ export const reservationsPopUp = (event) => {
 };
 
 export const closeReservePopUp = () => {
+  const reserveCountDisplay = document.querySelector('#reserveCount');
+  reserveCountDisplay.innerText = '';
   reservePopUpSpace.style.visibility = 'hidden';
   main.classList.remove('blur-bg');
   body.classList.remove('no-scroll');
