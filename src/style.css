@@ -233,6 +233,10 @@ form textarea {
   padding: 2rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 form button {
   width: 150px;
   height: 40px;
@@ -257,8 +261,4 @@ form button {
 
 .scroll {
   overflow: hidden;
-}
-
-button {
-  cursor: pointer;
 }
