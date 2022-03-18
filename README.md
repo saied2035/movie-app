@@ -53,9 +53,9 @@ Proceed to follow these steps:
 
 - Github: [@i-max-xi](https://github.com/i-max-xi)
 
-👤 **Saieb Gaffer**
+👤 **Saied Gaffer**
 
-- Github: [@Saieb2035](https://github.com/saied2035)
+- Github: [@Saied2035](https://github.com/saied2035)
 
 ## 🤝 Contributing
 
