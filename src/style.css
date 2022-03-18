@@ -46,6 +46,7 @@ header {
   top: 5%;
   left: 30%;
   padding: 10px 30px;
+  margin-top: 2.5rem;
   z-index: 1;
   visibility: hidden;
   background-color: white;
