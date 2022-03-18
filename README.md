@@ -15,10 +15,6 @@ We built a movie app sends and receives data to and from not just one, but two A
 - npm webpack, linters
 - Jest
 
-## Live Demo
-
-Click [this link]() to open the application in your browser.
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
