@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "watch": "jest --watch",
     "build": "webpack --mode=production",
-    "start": "webpack serve --open --mode=production"
+    "start": "webpack serve --open --mode=development"
   },
   "jest": {
     "transform": {
