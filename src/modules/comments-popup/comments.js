@@ -60,7 +60,10 @@ const closeComments = () => {
   document.querySelector('body').classList.remove('scroll');
 };
 
+if(localStorage.movies){
 const movies = JSON.parse(localStorage.movies);
+
+}
 export const savePop = (commentItem) => {
   const shows = Array.from(document.querySelectorAll('.movie-item'));
   const showItem = commentItem.closest('.movie-item');
