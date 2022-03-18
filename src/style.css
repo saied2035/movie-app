@@ -9,6 +9,7 @@
 :root {
   --primary-color: #22254b;
   --secondary-color: #373b69;
+  --other-color: #fff;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 }
 
 header {
-  background-color: #fff;
+  background-color: var(--other-color);
   z-index: -100;
 }
 
@@ -59,14 +60,14 @@ header {
 .foot .footext li {
   list-style: none;
   margin-right: 1rem;
-  color: #fff;
+  color: var(--other-color);
   font-size: 16px;
 }
 
 .foot h3 {
   font-size: 22px;
   font-weight: 800;
-  color: #fff;
+  color: var(--other-color);
 }
 
 .pop-overlay {
@@ -85,7 +86,7 @@ header {
 .comments-pop {
   width: 70%;
   margin: 5rem auto;
-  background-color: #fff;
+  background-color: var(--other-color);
   border-radius: 2rem;
   z-index: 1;
   position: relative;
