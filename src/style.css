@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap');
 
 * {
   box-sizing: border-box;
@@ -168,6 +168,7 @@ li {
   right: 1rem;
   top: 1rem;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .comments-pop h2 {
@@ -256,4 +257,8 @@ form button {
 
 .scroll {
   overflow: hidden;
+}
+
+button {
+  cursor: pointer;
 }
