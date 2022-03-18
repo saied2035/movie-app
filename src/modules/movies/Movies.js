@@ -53,7 +53,7 @@ class Movies {
       commentBtn.type = 'button';
       commentBtn.className = 'db center mt3 mb2 b mw-100';
       commentBtn.innerText = 'Comments';
-      commentBtn.addEventListener('click', showComments);
+      commentBtn.addEventListener('click', (event) => showComments(event, this.moviesList));
       movieContainer.appendChild(commentBtn);
 
       const reservationBtn = document.createElement('button');

@@ -60,11 +60,7 @@ const closeComments = () => {
   document.querySelector('body').classList.remove('scroll');
 };
 
-if(localStorage.movies){
-const movies = JSON.parse(localStorage.movies);
-
-}
-export const savePop = (commentItem) => {
+export const savePop = (commentItem, movies) => {
   const shows = Array.from(document.querySelectorAll('.movie-item'));
   const showItem = commentItem.closest('.movie-item');
   const showIndex = shows.indexOf(showItem);
@@ -108,9 +104,9 @@ export const savePop = (commentItem) => {
   });
 };
 
-export function showComments(e) {
+export function showComments(e, movies) {
   e.preventDefault();
-  savePop(e.target);
+  savePop(e.target, movies);
   commentsArea.classList.remove('hide');
   popOverlay.style.display = 'block';
   document.querySelector('body').classList.add('scroll');
