@@ -20,10 +20,12 @@ export const getReserve = async () => {
           redirect: 'follow',
         },
     )
+    // .then()
     const loadReserves = await response.json();
+    console.log(loadReserves);
     const loadReserveSpace = document.querySelector('#loadReserveSpace');
     loadReserveSpace.innerHTML = '';
-    loadReserves.result.forEach((event) => {
+    loadReserves.forEach((event) => {
     loadReserveSpace.innerHTML += `${event.date_start}- ${event.date_end} by ${event.username}`;
     });
 }

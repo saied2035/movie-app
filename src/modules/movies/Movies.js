@@ -38,7 +38,7 @@ class Movies {
       movieContainer.appendChild(likeIconContainer);
 
       const hiddenId = document.createElement('span');
-      hiddenId.className = 'dn';
+      hiddenId.className = 'dn hidden-id';
       hiddenId.innerText = movie.id;
       movieContainer.appendChild(hiddenId);
 
