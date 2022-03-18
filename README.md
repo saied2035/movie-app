@@ -9,6 +9,14 @@ We built a movie app sends and receives data to and from not just one, but two A
 ![Comments](src/images/comments.png)
 ![Reservations](src/images/reservations.png)
 
+## Video Presentation
+
+[This link](https://drive.google.com/file/d/1tKaqQF9QSPde9hpFE4F9gM_PvVddVAIM/view?usp=sharing) will take you to a video of the authors describing the project features.
+
+## Live Demo
+
+Click on [this link](https://saied2035.github.io/movie-app/) to go to the web application.
+
 ## Built With
 
 - Javascript, HTML, CSS
