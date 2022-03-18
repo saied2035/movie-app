@@ -23,6 +23,7 @@ export const loadLikes = async (api) => {
 export const itemCounter = () => {
   const movies = document.querySelectorAll('.movie-item');
   const numberOfMovies = movies.length;
+  console.log(numberOfMovies)
   const HomeNavItem = document.querySelector('.nav-item');
   HomeNavItem.innerText = `(${numberOfMovies}) ${HomeNavItem.innerText}`;
   return numberOfMovies;

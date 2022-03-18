@@ -10,10 +10,10 @@ class Movies {
 
   displayMovies() {
     const mainContainer = document.querySelector('main');
-    this.moviesList.forEach((movie) => {
+    this.moviesList.forEach((movie,i) => {
       const movieContainer = document.createElement('div');
-      movieContainer.className = 'movie-item w-50 w-40-m w-20-ns ma4 mt0 bg-white';
-      movieContainer.id = `movie${movie.id}`;
+      movieContainer.className = 'movie-item w-80 fl-m ma4 ma5-m mt0 w-40-m w-25-ns bg-white';
+      movieContainer.id = `movie${i+1}`;
 
       const movieImg = document.createElement('img');
       movieImg.alt = 'movie image';

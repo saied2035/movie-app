@@ -19,8 +19,10 @@ window.addEventListener('load', () => getMovies(movies).then(() => {
   loadLikes(movies.involvmentAPI);
   dom.watch();
   itemCounter();
-  const container = document.querySelector('main')
-  container.scrollTo({top:0,left:2*(window.innerWidth-18),behavior:'smooth'})
+/*  const container = document.querySelector('main')
+    const element = document.querySelector('#movie20')
+  console.log(element.offsetLeft,container.lastChild)
+  container.scrollTo({top:0,left:element.offsetLeft-64,behavior:'smooth'})*/
 }));
 
 // 1.043191800878477
