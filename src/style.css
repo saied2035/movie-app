@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap');
 
 * {
@@ -116,6 +117,7 @@ header {
   right: 1rem;
   top: 1rem;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .comments-pop h2 {
@@ -204,4 +206,8 @@ form button {
 
 .scroll {
   overflow: hidden;
+}
+
+button {
+  cursor: pointer;
 }
