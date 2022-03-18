@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Movies-2Watch</title>
-</head>
-<body>
-  <header>
-    <nav id="nav" class="flex justify-between">
-     <img src="./images/logo.jpeg" class="fr w4 pa2 center" alt="logo">
-     <ul id="nav-list" class="flex fl w-50 pa2 items-center center">
-      <li class="nav-item ml5-ns mr5-ns ml3-m mr3-m pointer bold-underline">Movies</li>
-      <li class="nav-item ml5-ns mr5-ns ml3-m mr3-m pointer">Catagories</li>
-      <li class="nav-item ml5-ns mr5-ns ml3-m mr3-m pointer">Most liked</li>  
-    </ul>
-    </nav>
-  </header>
-  <main class="flex justify-around flex-wrap mb5">
-    <div class="pop-overlay">
-      <div class="hide comments-pop"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies 2 watch</title>
+  </head>
+  <body>
+    <header>
+      <nav id="nav" class="flex justify-between">
+        <img src="./images/logo.jpeg" class="fr w4 pa2 center" alt="logo" />
+        <ul id="nav-list" class="flex fl w-50 pa2 items-center center">
+          <li class="nav-item ml5-ns mr5-ns ml3-m mr3-m pointer bold-underline">
+            Movies
+          </li>
+          <li class="nav-item ml5-ns mr5-ns ml3-m mr3-m pointer">Catagories</li>
+          <li class="nav-item ml5-ns mr5-ns ml3-m mr3-m pointer">Most liked</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex justify-around flex-wrap mb5">
+      <div class="pop-overlay">
+        <div class="hide comments-pop"></div>
+      </div>
+    </main>
+    <div id="reservePopUpSpace">
+      <span class="close-reserve pointer">&#x2715;</span>
+      <div id="movieSpace">
+        
+      </div>
+      <h3 class="tc center">Reservations<span id="reserveCount"></span></h3>
+      <div id="loadReserveSpace" class="tc center"></div>
+      <form id="reserveForm">
+        <h3 class="tc center">Add a Reservation</h3>
+        <input type="text" placeholder="name" id="name" required/>
+        <input type="date" id="start_date" required/>
+        <input type="date" id="end_date" required/>
+        <button type="submit">Add Reservations</button>
+      </form>
     </div>
-  </main>
+
     <footer class="foot">
       <ul class="footext">
         <li>Saied Gaffer</li>
@@ -30,5 +47,5 @@
       </ul>
       <h3>Copyright&COPY; 2022</h3>
     </footer>
-</body>
+  </body>
 </html>

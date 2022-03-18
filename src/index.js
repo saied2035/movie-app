@@ -6,6 +6,7 @@ import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { activateItemListStyle, loadLikes, itemCounter } from './modules/functions/functions.js';
 import { getMovies } from './modules/events/events.js';
 import movies from './modules/movies/Movies.js';
+import addReserve from './modules/functions/addReserve.js';
 
 library.add(faHeart, faTimes);
 
@@ -21,3 +22,9 @@ window.addEventListener('load', () => getMovies(movies).then(() => {
   dom.watch();
   itemCounter();
 }));
+
+const reserveForm = document.querySelector('#reserveForm');
+reserveForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addReserve(event);
+});

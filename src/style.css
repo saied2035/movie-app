@@ -1,4 +1,3 @@
-/* stylelint-disable no-descending-specificity */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300&display=swap');
 
 * {
@@ -15,7 +14,7 @@
 
 body {
   background-color: var(--primary-color);
-  font-family: 'Cormorant Upright', serif;
+  font-family: "Cormorant Upright", serif;
 }
 
 header {
@@ -38,6 +37,58 @@ header {
 .bold-underline {
   font-weight: bolder;
   text-decoration: underline;
+}
+
+#reservePopUpSpace {
+  width: 40vw;
+  height: 80%;
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  padding: 10px 30px;
+  z-index: 1;
+  visibility: hidden;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+#movieSpace {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserveImg {
+  width: 50%;
+  align-self: center;
+  margin: 10px;
+  box-shadow: 1px 2px 1px 1px rgb(90, 90, 90);
+}
+
+#reservePopUpSpace > div {
+  margin: 10px 2px;
+}
+
+.close-reserve {
+  float: right;
+}
+
+.blur-bg {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#reserveForm {
+  display: flex;
+  flex-direction: column;
 }
 
 .foot {
@@ -182,6 +233,10 @@ form textarea {
   padding: 2rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 form button {
   width: 150px;
   height: 40px;
@@ -206,8 +261,4 @@ form button {
 
 .scroll {
   overflow: hidden;
-}
-
-button {
-  cursor: pointer;
 }
