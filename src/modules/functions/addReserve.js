@@ -10,15 +10,19 @@ const addReserve = (event) => {
   // const id = idContainer.innerText;
 
   // console.log(id);
+  // const non_specific_id = document.querySelector('#movieSpace > ');
+  const specific_id = document.querySelector('#movieSpace > .hidden_id').innerText;
+  console.log(specific_id);
   const raw = JSON.stringify({
-    item_id: '1',
+    item_id: specific_id,
     username: name.value,
     date_start: start_date.value,
     date_end: end_date.value
   });
-  postReserve(raw);
+
   form.reset();
-  getReserve();
+  postReserve(raw, specific_id);
+  getReserve(specific_id);
 };
 
 export default addReserve;

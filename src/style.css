@@ -39,6 +39,7 @@ path {
 
 #reservePopUpSpace {
   width: 40vw;
+  height: 80%;
   position: fixed;
   top: 5%;
   left: 30%;
@@ -46,6 +47,11 @@ path {
   z-index: 1;
   visibility: hidden;
   background-color: white;
+  overflow-y: scroll;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 #movieSpace {
