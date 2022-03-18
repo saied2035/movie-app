@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import { showComments } from '../comments-popup/comments.js';
 import { saveLike } from '../events/events.js';
 import {reservationsPopUp} from '../functions/reservationFunct.js'
 
@@ -51,6 +53,7 @@ class Movies {
       commentBtn.type = 'button';
       commentBtn.className = 'db center mt3 mb2 b mw-100';
       commentBtn.innerText = 'Comments';
+      commentBtn.addEventListener('click', showComments);
       movieContainer.appendChild(commentBtn);
 
       const reservationBtn = document.createElement('button');
