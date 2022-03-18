@@ -1,3 +1,4 @@
+import { reserveCount } from "../functions/addReserve.js";
 export const postReserve = async (raw , id) => {
     await fetch(
         `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6IS1WqwHJvP8CAVA1Fp2/reservations?item_id=${id}`,
@@ -21,12 +22,12 @@ export const getReserve = async (id) => {
           redirect: 'follow',
         },
     )
-    console.log(id);
     const loadReserves = await response.json();
     console.log(loadReserves);
     const loadReserveSpace = document.querySelector('#loadReserveSpace');
     loadReserveSpace.innerHTML = '';
     loadReserves.forEach((item) => {
-    loadReserveSpace.innerHTML += `${item.date_start}- ${item.date_end} by ${item.username} </br>`;
+    loadReserveSpace.innerHTML += `<li>${item.date_start}- ${item.date_end} by ${item.username} </li>`;
     });
+    reserveCount(loadReserves);
 }

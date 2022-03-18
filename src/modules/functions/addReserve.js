@@ -1,5 +1,10 @@
 import { postReserve, getReserve } from "../events/reserve_api.js";
 
+export const reserveCount = (items) => {
+  const reserveCountDisplay = document.querySelector('#reserveCount');
+  reserveCountDisplay.innerText = `(${items.length})`;
+}
+
 const addReserve = (event) => {
   const name = document.querySelector('#name');
   const start_date = document.querySelector('#start_date');

@@ -9,7 +9,7 @@ const local = JSON.parse(localStorage.getItem('movies'));
 const reserveImage = document.createElement('img');
 const ReserveName = document.createElement('h4');
 const hidden_id = document.createElement('span');
-// const description = document.createElement('div');
+const description = document.createElement('div');
 
 //Functions
 export const reservationsPopUp = (event) => {
@@ -18,11 +18,11 @@ export const reservationsPopUp = (event) => {
   ReserveName.innerText = `Title: ${local[event.target.id].name}`;
   hidden_id.className = 'hidden_id';
   hidden_id.innerText = event.target.id;
-  // description.innerHTML = local[event.target.id].summary;
+  description.innerHTML = local[event.target.id].summary;
 
   movieSpace.appendChild(reserveImage);
   movieSpace.appendChild(ReserveName);
-  // movieSpace.appendChild(description);
+  movieSpace.appendChild(description);
   movieSpace.appendChild(hidden_id);
   reservePopUpSpace.style.visibility = 'visible';
   main.classList.add('blur-bg');

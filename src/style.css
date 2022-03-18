@@ -71,8 +71,9 @@ path {
 }
 
 #reservePopUpSpace > h3 {
-  transform: translateX(40%);
-  margin: 20px;
+  width: fit-content;
+  /* transform: translateX(40%); */
+  margin: 20px 180px;
 }
 
 .close-reserve {
