@@ -1,12 +1,13 @@
 import 'tachyons';
 import './style.css';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { activateItemListStyle, loadLikes, itemCounter } from './modules/functions/functions.js';
 import { getMovies } from './modules/events/events.js';
 import movies from './modules/movies/Movies.js';
+import addReserve from './modules/functions/addReserve.js';
 
-library.add(faHeart);
+library.add(faHeart, faTimes);
 
 const whatToDisplay = (event) => {
   activateItemListStyle(event.target);
@@ -19,10 +20,11 @@ window.addEventListener('load', () => getMovies(movies).then(() => {
   loadLikes(movies.involvmentAPI);
   dom.watch();
   itemCounter();
-/*  const container = document.querySelector('main')
-    const element = document.querySelector('#movie20')
-  console.log(element.offsetLeft,container.lastChild)
-  container.scrollTo({top:0,left:element.offsetLeft-64,behavior:'smooth'})*/
 }));
 
-// 1.043191800878477
+const reserveForm = document.querySelector('#reserveForm');
+reserveForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addReserve(event);
+});
+

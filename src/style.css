@@ -9,26 +9,29 @@
 :root {
   --primary-color: #22254b;
   --secondary-color: #373b69;
+  --other-color: #fff;
 }
 
 body {
   background-color: var(--primary-color);
-  font-family: 'Cormorant Upright', serif;
-  overflow: hidden;
+  font-family: "Cormorant Upright", serif;
 }
 
 header {
-  background-color: #fff;
+  background-color: var(--other-color);
+  z-index: -100;
 }
+
 main {
-  height: 75vh;
+  height: 220vh;
   overflow-x: hidden;
   overflow-y: auto;
 }
 .movie-item:last-child {
   margin-right: 16px;
 }
-path {
+
+.movie-item path {
   pointer-events: none;
   stroke: red;
   stroke-width: 40;
@@ -45,10 +48,63 @@ path {
   text-decoration: underline;
 }
 
+#reservePopUpSpace {
+  width: 40vw;
+  height: 80%;
+  position: fixed;
+  top: 5%;
+  left: 30%;
+  padding: 10px 30px;
+  margin-top: 2.5rem;
+  z-index: 1;
+  visibility: hidden;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+#movieSpace {
+  display: flex;
+  flex-direction: column;
+}
+
+.reserveImg {
+  width: 50%;
+  align-self: center;
+  margin: 10px;
+  box-shadow: 1px 2px 1px 1px rgb(90, 90, 90);
+}
+
+#reservePopUpSpace > div {
+  margin: 10px 2px;
+}
+
+.close-reserve {
+  float: right;
+}
+
+.blur-bg {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#reserveForm {
+  display: flex;
+  flex-direction: column;
+}
+
 .foot {
   border-top: 1px solid black;
   width: 100%;
-  position: fixed;
+  position: relative;
   bottom: 0;
   padding: 1rem;
   display: flex;
@@ -67,12 +123,153 @@ path {
 .foot .footext li {
   list-style: none;
   margin-right: 1rem;
-  color: #fff;
+  color: var(--other-color);
   font-size: 16px;
 }
 
 .foot h3 {
   font-size: 22px;
   font-weight: 800;
-  color: #fff;
+  color: var(--other-color);
+}
+
+.pop-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  display: none;
+  overflow: hidden;
+}
+
+.comments-pop {
+  width: 70%;
+  margin: 5rem auto;
+  background-color: var(--other-color);
+  border-radius: 2rem;
+  z-index: 1;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.img-div {
+  width: 55%;
+  height: 200px;
+  margin: 2rem auto;
+  display: flex;
+}
+
+.img-div img {
+  width: 70%;
+  margin: 2rem auto 0 auto;
+}
+
+.fa-xmark {
+  font-size: 30px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.comments-pop h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 100;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.specs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 15vw);
+  grid-template-rows: repeat(2, 45px);
+  text-align: start;
+  font-size: 24px;
+  line-height: 12px;
+  word-break: normal;
+  margin: 1rem 25% 0 25%;
+}
+
+.specs span {
+  font-size: 16px;
+}
+
+.show-comments {
+  text-align: center;
+  position: relative;
+}
+
+.show-comments ul {
+  list-style: none;
+  border: 2px solid silver;
+  border-radius: 10px;
+  width: 80%;
+  margin: 1rem auto;
+  max-height: 30vh;
+  overflow: auto;
+}
+
+.add-comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.add-comments form {
+  margin: 1rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin-bottom: 1rem;
+  padding: 10px 2rem;
+}
+
+form textarea {
+  margin-bottom: 1rem;
+  padding: 2rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+form button {
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+.scroll {
+  overflow: hidden;
 }

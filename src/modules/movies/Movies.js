@@ -1,4 +1,7 @@
+// eslint-disable-next-line no-unused-vars
+import { showComments } from '../comments-popup/comments.js';
 import { saveLike } from '../events/events.js';
+import { reservationsPopUp } from '../functions/reservationFunct.js';
 
 class Movies {
   constructor() {
@@ -6,6 +9,7 @@ class Movies {
     this.url = 'https://api.tvmaze.com';
     this.appId = '6IS1WqwHJvP8CAVA1Fp2';
     this.involvmentAPI = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${this.appId}`;
+    this.i = 0;
   }
 
   displayMovies() {
@@ -36,7 +40,7 @@ class Movies {
       movieContainer.appendChild(likeIconContainer);
 
       const hiddenId = document.createElement('span');
-      hiddenId.className = 'dn';
+      hiddenId.className = 'dn hidden-id';
       hiddenId.innerText = movie.id;
       movieContainer.appendChild(hiddenId);
 
@@ -49,12 +53,16 @@ class Movies {
       commentBtn.type = 'button';
       commentBtn.className = 'db center mt3 mb2 b mw-100';
       commentBtn.innerText = 'Comments';
+      commentBtn.addEventListener('click', (event) => showComments(event, this.moviesList));
       movieContainer.appendChild(commentBtn);
 
       const reservationBtn = document.createElement('button');
       reservationBtn.type = 'button';
       reservationBtn.className = 'db center mt3 mb2 b mw-100';
+      reservationBtn.id = this.i;
+      this.i += 1;
       reservationBtn.innerText = 'Reservations';
+      reservationBtn.addEventListener('click', reservationsPopUp);
       movieContainer.appendChild(reservationBtn);
       mainContainer.appendChild(movieContainer);
     });
