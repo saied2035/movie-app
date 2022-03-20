@@ -1,13 +1,12 @@
 import 'tachyons';
 import './style.css';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faHeart, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faTimes, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { activateItemListStyle, loadLikes, itemCounter } from './modules/functions/functions.js';
 import { getMovies } from './modules/events/events.js';
 import movies from './modules/movies/Movies.js';
 import addReserve from './modules/functions/addReserve.js';
-
-library.add(faHeart, faTimes);
+library.add(faHeart, faTimes, faAngleRight, faAngleLeft);
 
 const whatToDisplay = (event) => {
   activateItemListStyle(event.target);

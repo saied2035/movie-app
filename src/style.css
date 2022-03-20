@@ -23,14 +23,45 @@ header {
 }
 
 main {
-  height: 220vh;
+  height: 260vh;
+  gap: 4% 10vw;
   overflow-x: hidden;
   overflow-y: auto;
 }
-.movie-item:last-child {
-  margin-right: 16px;
+
+@media only screen and (max-width: 479px) {
+  main {
+    gap: 4% 24vw;
+  }
+}
+.movie-item {
+  height: 30%;
+}
+.movie-item:nth-last-child(1),.movie-item:nth-last-child(2),.movie-item:nth-last-child(3) {
+  margin-right: 4vw;
+}
+@media only screen and (max-width: 960px) {
+.movie-item:nth-last-child(1),.movie-item:nth-last-child(2),.movie-item:nth-last-child(3){
+  margin-right: 7vw;
+}
+}
+.arrow-left,.arrow-right {
+  top : 75%;
+  font-size:  32px;
+  pointer-events: auto;
 }
 
+.arrow-left {
+  left: 0.5rem;
+}
+
+.arrow-right {
+  right: 0.5rem;
+}
+
+path {
+  pointer-events: none;
+}
 .movie-item path {
   pointer-events: none;
   stroke: red;
@@ -272,4 +303,9 @@ form button {
 
 .scroll {
   overflow: hidden;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }

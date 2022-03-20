@@ -71,7 +71,7 @@ export const savePop = (commentItem, movies) => {
   commentsArea.innerHTML = `
     <div class="img-div dn">
     <img src="${image.original}">
-    <span class="close-icon"><i class="fa fa-xmark" aria-hidden="true"></i></span>
+    <span class="close-icon"><i class="fa fa-xmark close-icon" aria-hidden="true"></i></span>
   </div>
   <h2>${name}</h2>
   <input type="hidden" id="item-id" value="${id}">
